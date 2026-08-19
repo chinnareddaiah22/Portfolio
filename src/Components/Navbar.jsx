@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import {
   FaBars,
   FaTimes,
@@ -7,23 +8,32 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-import resume from "../assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
-
 // =====================================================
 // RESUME
-// Resume file is located inside:
-// src/assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf
+// Resume is located inside the public folder:
+//
+// public/Chinnareddaiah_Java_Backend_Developer_Resume.pdf
+//
+// Files inside public are accessed using /filename
 // =====================================================
 
+const resume = "/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile menu whenever the page changes
+  // =====================================================
+  // CLOSE MOBILE MENU WHEN PAGE CHANGES
+  // =====================================================
+
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
+
+  // =====================================================
+  // NAVIGATION ITEMS
+  // =====================================================
 
   const navItems = [
     {
@@ -246,6 +256,10 @@ export default function Navbar() {
 
         /* =====================================================
            RESUME BUTTON
+           
+           IMPORTANT:
+           target="_blank" opens the PDF.
+           There is NO download attribute here.
         ===================================================== */
 
         .portfolio-resume {
@@ -445,6 +459,10 @@ export default function Navbar() {
 
         /* =====================================================
            MOBILE RESUME
+           
+           IMPORTANT:
+           This opens the resume in a new tab.
+           There is NO download attribute.
         ===================================================== */
 
         .mobile-resume {
@@ -614,14 +632,17 @@ export default function Navbar() {
 
 
           {/* =================================================
-              DESKTOP RESUME DOWNLOAD
+              DESKTOP RESUME
+              
+              OPENS PDF IN NEW TAB
           ================================================= */}
 
           <a
             href={resume}
-            download="Chinnareddaiah_Java_Backend_Developer_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="portfolio-resume"
-            title="Download Resume"
+            title="View Resume"
           >
 
             <FaDownload />
@@ -703,20 +724,23 @@ export default function Navbar() {
 
 
             {/* =================================================
-                MOBILE RESUME DOWNLOAD
+                MOBILE RESUME
+                
+                OPENS PDF IN NEW TAB
             ================================================= */}
 
             <a
               href={resume}
-              download="Chinnareddaiah_Java_Backend_Developer_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mobile-resume"
               onClick={() => setOpen(false)}
-              title="Download Resume"
+              title="View Resume"
             >
 
               <FaDownload />
 
-              Download Resume
+              View Resume
 
             </a>
 

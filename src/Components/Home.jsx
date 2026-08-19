@@ -1,14 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import resume from "../assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
 
 import myPhoto from "../assets/myPhoto.jpg";
-<a 
-  href={resume} 
-  download="Chinnareddaiah_Java_Backend_Developer_Resume.pdf"
->
-  Resume
-</a>
 
 import {
   FaLinkedin,
@@ -17,10 +10,22 @@ import {
   FaTwitter,
   FaDownload,
   FaArrowRight,
+  FaEye,
 } from "react-icons/fa";
 
 import { MdEmail } from "react-icons/md";
 import { Typewriter } from "react-simple-typewriter";
+
+// =====================================================
+// RESUME
+// PDF is located inside the public folder:
+//
+// public/Chinnareddaiah_Java_Backend_Developer_Resume.pdf
+//
+// Files inside public are accessed using /filename
+// =====================================================
+
+const resume = "/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
 
 export default function Home() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -46,17 +51,23 @@ export default function Home() {
   return (
     <section id="home" style={styles.home(isMobile)}>
 
-      {/* BACKGROUND DECORATION */}
+      {/* =====================================================
+          BACKGROUND DECORATION
+      ===================================================== */}
+
       <div style={styles.glowOne}></div>
       <div style={styles.glowTwo}></div>
       <div style={styles.glowThree}></div>
 
-      {/* MAIN CONTENT */}
+      {/* =====================================================
+          MAIN CONTENT
+      ===================================================== */}
+
       <div style={styles.container(isMobile, isTablet)}>
 
-        {/* ========================================= */}
-        {/* LEFT SIDE - PHOTO */}
-        {/* ========================================= */}
+        {/* =====================================================
+            LEFT SIDE - PHOTO
+        ===================================================== */}
 
         <div style={styles.photoColumn(isMobile)}>
 
@@ -73,7 +84,9 @@ export default function Home() {
           </div>
 
           {/* SMALL TEXT BELOW PHOTO */}
+
           <div style={styles.photoCaption}>
+
             <span style={styles.captionLine}></span>
 
             <span>
@@ -81,34 +94,43 @@ export default function Home() {
             </span>
 
             <span style={styles.captionLine}></span>
+
           </div>
 
         </div>
 
-
-        {/* ========================================= */}
-        {/* RIGHT SIDE - CONTENT */}
-        {/* ========================================= */}
+        {/* =====================================================
+            RIGHT SIDE - CONTENT
+        ===================================================== */}
 
         <div style={styles.content(isMobile)}>
 
-          {/* INTRO */}
+          {/* =====================================================
+              INTRO
+          ===================================================== */}
+
           <div style={styles.intro(isMobile)}>
+
             <span style={styles.introLine}></span>
 
             <span style={styles.introText}>
               HELLO, I'M
             </span>
+
           </div>
 
+          {/* =====================================================
+              NAME
+          ===================================================== */}
 
-          {/* NAME */}
           <h1 style={styles.name(isMobile)}>
             Chinnareddaiah
           </h1>
 
+          {/* =====================================================
+              ANIMATED ROLE
+          ===================================================== */}
 
-          {/* ANIMATED ROLE */}
           <div style={styles.roleContainer(isMobile)}>
 
             <span style={styles.roleStatic}>
@@ -116,6 +138,7 @@ export default function Home() {
             </span>
 
             <span style={styles.roleAnimated}>
+
               <Typewriter
                 words={[
                   "Developer",
@@ -129,43 +152,55 @@ export default function Home() {
                 deleteSpeed={55}
                 delaySpeed={1300}
               />
+
             </span>
 
           </div>
 
+          {/* =====================================================
+              DESCRIPTION
+          ===================================================== */}
 
-          {/* DESCRIPTION */}
           <p style={styles.description(isMobile)}>
+
             I am a passionate{" "}
+
             <strong style={styles.highlight}>
               Java Developer
             </strong>{" "}
+
             focused on building clean, reliable and
             practical applications using Java and
             database technologies.
+
           </p>
 
           <p style={styles.description(isMobile)}>
+
             I have hands-on experience with{" "}
+
             <strong style={styles.highlight}>
               Core Java, JDBC, Servlets, JSP,
               Hibernate, JPA, Spring Core,
               SQL and Oracle
             </strong>
+
             , along with basic knowledge of
             HTML, CSS and JavaScript.
+
           </p>
 
           <p style={styles.description(isMobile)}>
+
             I enjoy learning new technologies,
             solving programming problems and
             turning ideas into working applications.
+
           </p>
 
-
-          {/* ========================================= */}
-          {/* SKILLS */}
-          {/* ========================================= */}
+          {/* =====================================================
+              SKILLS
+          ===================================================== */}
 
           <div style={styles.skillsSection}>
 
@@ -223,10 +258,9 @@ export default function Home() {
 
           </div>
 
-
-          {/* ========================================= */}
-          {/* SOCIAL LINKS */}
-          {/* ========================================= */}
+          {/* =====================================================
+              SOCIAL LINKS
+          ===================================================== */}
 
           <div style={styles.connectSection}>
 
@@ -236,7 +270,10 @@ export default function Home() {
 
             <div style={styles.socialContainer}>
 
-              {/* LINKEDIN */}
+              {/* =================================================
+                  LINKEDIN
+              ================================================= */}
+
               <a
                 href="https://linkedin.com/in/chinnareddaiah-chagalamarri"
                 target="_blank"
@@ -258,8 +295,10 @@ export default function Home() {
                 <FaLinkedin />
               </a>
 
+              {/* =================================================
+                  GITHUB
+              ================================================= */}
 
-              {/* GITHUB */}
               <a
                 href="https://github.com/chinnareddaiah22"
                 target="_blank"
@@ -281,8 +320,10 @@ export default function Home() {
                 <FaGithub />
               </a>
 
+              {/* =================================================
+                  EMAIL
+              ================================================= */}
 
-              {/* EMAIL */}
               <a
                 href="mailto:chinnareddaiah.chagalamarri@gmail.com"
                 aria-label="Email"
@@ -302,8 +343,10 @@ export default function Home() {
                 <MdEmail />
               </a>
 
+              {/* =================================================
+                  WHATSAPP
+              ================================================= */}
 
-              {/* WHATSAPP */}
               <a
                 href="https://wa.me/918328155474"
                 target="_blank"
@@ -325,8 +368,10 @@ export default function Home() {
                 <FaWhatsapp />
               </a>
 
+              {/* =================================================
+                  X / TWITTER
+              ================================================= */}
 
-              {/* X / TWITTER */}
               <a
                 href="https://x.com/chinna3322"
                 target="_blank"
@@ -352,32 +397,64 @@ export default function Home() {
 
           </div>
 
-
-          {/* ========================================= */}
-          {/* ACTION BUTTONS */}
-          {/* ========================================= */}
+          {/* =====================================================
+              ACTION BUTTONS
+          ===================================================== */}
 
           <div style={styles.buttons(isMobile)}>
 
-            {/* RESUME */}
+            {/* =================================================
+                VIEW RESUME
+                Opens PDF in a new browser tab
+            ================================================= */}
+
             <a
               href={resume}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               style={styles.resumeButton}
+              title="View Resume"
             >
-              <FaDownload />
-              <span>Download Resume</span>
+              <FaEye />
+
+              <span>
+                View Resume
+              </span>
             </a>
 
+            {/* =================================================
+                DOWNLOAD RESUME
+                Downloads the PDF
+            ================================================= */}
 
-            {/* PROJECTS */}
+            <a
+              href={resume}
+              download="Chinnareddaiah_Java_Backend_Developer_Resume.pdf"
+              style={styles.downloadButton}
+              title="Download Resume"
+            >
+              <FaDownload />
+
+              <span>
+                Download Resume
+              </span>
+            </a>
+
+            {/* =================================================
+                PROJECTS
+            ================================================= */}
+
             <button
               onClick={() => navigate("/projects")}
               style={styles.projectButton}
             >
-              <span>View My Projects</span>
+
+              <span>
+                View My Projects
+              </span>
 
               <FaArrowRight />
+
             </button>
 
           </div>
@@ -386,10 +463,9 @@ export default function Home() {
 
       </div>
 
-
-      {/* ========================================= */}
-      {/* BOTTOM SCROLL */}
-      {/* ========================================= */}
+      {/* =====================================================
+          BOTTOM SCROLL
+      ===================================================== */}
 
       <div style={styles.scrollIndicator}>
 
@@ -408,15 +484,15 @@ export default function Home() {
 }
 
 
-/* ================================================= */
-/* STYLES */
-/* ================================================= */
+/* =========================================================
+   STYLES
+========================================================= */
 
 const styles = {
 
-  /* ========================================= */
-  /* HOME */
-  /* ========================================= */
+  /* =====================================================
+     HOME
+  ===================================================== */
 
   home: (isMobile) => ({
     position: "relative",
@@ -453,9 +529,9 @@ const styles = {
   }),
 
 
-  /* ========================================= */
-  /* BACKGROUND GLOWS */
-  /* ========================================= */
+  /* =====================================================
+     BACKGROUND GLOWS
+  ===================================================== */
 
   glowOne: {
     position: "absolute",
@@ -478,6 +554,7 @@ const styles = {
     pointerEvents: "none",
   },
 
+
   glowTwo: {
     position: "absolute",
 
@@ -498,6 +575,7 @@ const styles = {
 
     pointerEvents: "none",
   },
+
 
   glowThree: {
     position: "absolute",
@@ -521,9 +599,9 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* MAIN CONTAINER */
-  /* ========================================= */
+  /* =====================================================
+     MAIN CONTAINER
+  ===================================================== */
 
   container: (isMobile, isTablet) => ({
     position: "relative",
@@ -556,9 +634,9 @@ const styles = {
   }),
 
 
-  /* ========================================= */
-  /* PHOTO COLUMN */
-  /* ========================================= */
+  /* =====================================================
+     PHOTO COLUMN
+  ===================================================== */
 
   photoColumn: (isMobile) => ({
     flex:
@@ -581,9 +659,9 @@ const styles = {
   }),
 
 
-  /* ========================================= */
-  /* PHOTO */
-  /* ========================================= */
+  /* =====================================================
+     PHOTO
+  ===================================================== */
 
   photoOuter: {
     position: "relative",
@@ -608,6 +686,7 @@ const styles = {
       "profileFloat 6s ease-in-out infinite",
   },
 
+
   photoRing: {
     position: "absolute",
 
@@ -623,6 +702,7 @@ const styles = {
 
     pointerEvents: "none",
   },
+
 
   photo: (isMobile) => ({
     display: "block",
@@ -648,9 +728,9 @@ const styles = {
   }),
 
 
-  /* ========================================= */
-  /* PHOTO CAPTION */
-  /* ========================================= */
+  /* =====================================================
+     PHOTO CAPTION
+  ===================================================== */
 
   photoCaption: {
     display: "flex",
@@ -672,6 +752,7 @@ const styles = {
     textTransform: "uppercase",
   },
 
+
   captionLine: {
     width: "28px",
 
@@ -682,9 +763,9 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* CONTENT */
-  /* ========================================= */
+  /* =====================================================
+     CONTENT
+  ===================================================== */
 
   content: (isMobile) => ({
     flex: "1",
@@ -703,9 +784,9 @@ const styles = {
   }),
 
 
-  /* ========================================= */
-  /* INTRO */
-  /* ========================================= */
+  /* =====================================================
+     INTRO
+  ===================================================== */
 
   intro: (isMobile) => ({
     display: "flex",
@@ -722,6 +803,7 @@ const styles = {
     marginBottom: "13px",
   }),
 
+
   introLine: {
     width: "38px",
 
@@ -732,6 +814,7 @@ const styles = {
     background:
       "linear-gradient(90deg, #2563eb, #6366f1)",
   },
+
 
   introText: {
     color: "#60a5fa",
@@ -744,9 +827,9 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* NAME */
-  /* ========================================= */
+  /* =====================================================
+     NAME
+  ===================================================== */
 
   name: (isMobile) => ({
     margin: "0",
@@ -766,9 +849,9 @@ const styles = {
   }),
 
 
-  /* ========================================= */
-  /* ROLE */
-  /* ========================================= */
+  /* =====================================================
+     ROLE
+  ===================================================== */
 
   roleContainer: (isMobile) => ({
     display: "flex",
@@ -801,9 +884,11 @@ const styles = {
     fontWeight: "700",
   }),
 
+
   roleStatic: {
     color: "#cbd5e1",
   },
+
 
   roleAnimated: {
     color: "#60a5fa",
@@ -813,9 +898,9 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* DESCRIPTION */
-  /* ========================================= */
+  /* =====================================================
+     DESCRIPTION
+  ===================================================== */
 
   description: (isMobile) => ({
     margin:
@@ -833,6 +918,7 @@ const styles = {
     lineHeight: "1.85",
   }),
 
+
   highlight: {
     color: "#93c5fd",
 
@@ -840,15 +926,16 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* SKILLS */
-  /* ========================================= */
+  /* =====================================================
+     SKILLS
+  ===================================================== */
 
   skillsSection: {
     marginTop: "21px",
 
     marginBottom: "21px",
   },
+
 
   skillsLabel: {
     display: "block",
@@ -864,6 +951,7 @@ const styles = {
     letterSpacing: "2px",
   },
 
+
   skillsContainer: {
     display: "flex",
 
@@ -873,6 +961,7 @@ const styles = {
 
     justifyContent: "flex-start",
   },
+
 
   skill: {
     padding: "6px 10px",
@@ -896,13 +985,14 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* SOCIAL */
-  /* ========================================= */
+  /* =====================================================
+     SOCIAL
+  ===================================================== */
 
   connectSection: {
     marginBottom: "23px",
   },
+
 
   connectText: {
     display: "block",
@@ -918,6 +1008,7 @@ const styles = {
     letterSpacing: "2px",
   },
 
+
   socialContainer: {
     display: "flex",
 
@@ -929,6 +1020,7 @@ const styles = {
 
     justifyContent: "flex-start",
   },
+
 
   socialIcon: {
     width: "42px",
@@ -959,6 +1051,7 @@ const styles = {
       "all 0.25s ease",
   },
 
+
   socialHover: {
     transform: "translateY(-4px)",
 
@@ -975,9 +1068,9 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* BUTTONS */
-  /* ========================================= */
+  /* =====================================================
+     BUTTONS
+  ===================================================== */
 
   buttons: (isMobile) => ({
     display: "flex",
@@ -993,6 +1086,11 @@ const styles = {
 
     gap: "12px",
   }),
+
+
+  /* =====================================================
+     VIEW RESUME BUTTON
+  ===================================================== */
 
   resumeButton: {
     display: "inline-flex",
@@ -1024,6 +1122,49 @@ const styles = {
     transition:
       "all 0.3s ease",
   },
+
+
+  /* =====================================================
+     DOWNLOAD RESUME BUTTON
+  ===================================================== */
+
+  downloadButton: {
+    display: "inline-flex",
+
+    alignItems: "center",
+
+    justifyContent: "center",
+
+    gap: "9px",
+
+    padding: "12px 19px",
+
+    borderRadius: "10px",
+
+    background:
+      "rgba(255,255,255,0.035)",
+
+    border:
+      "1px solid rgba(96,165,250,0.25)",
+
+    color: "#e2e8f0",
+
+    textDecoration: "none",
+
+    fontSize: "13px",
+
+    fontWeight: "700",
+
+    cursor: "pointer",
+
+    transition:
+      "all 0.3s ease",
+  },
+
+
+  /* =====================================================
+     PROJECT BUTTON
+  ===================================================== */
 
   projectButton: {
     display: "inline-flex",
@@ -1057,9 +1198,9 @@ const styles = {
   },
 
 
-  /* ========================================= */
-  /* SCROLL */
-  /* ========================================= */
+  /* =====================================================
+     SCROLL
+  ===================================================== */
 
   scrollIndicator: {
     position: "absolute",
@@ -1087,6 +1228,7 @@ const styles = {
     whiteSpace: "nowrap",
   },
 
+
   scrollLine: {
     width: "25px",
 
@@ -1095,4 +1237,5 @@ const styles = {
     background:
       "rgba(96,165,250,0.25)",
   },
+
 };
