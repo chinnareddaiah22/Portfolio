@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import resume from "../assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
 
 import myPhoto from "../assets/myPhoto.jpg";
-import resume from "../assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
+<a 
+  href={resume} 
+  download="Chinnareddaiah_Java_Backend_Developer_Resume.pdf"
+>
+  Resume
+</a>
 
 import {
   FaLinkedin,

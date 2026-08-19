@@ -7,12 +7,14 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
+import resume from "../assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
+
 // =====================================================
 // RESUME
 // Resume file is located inside:
 // src/assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf
 // =====================================================
-import resume from "../assets/Chinnareddaiah_Java_Backend_Developer_Resume.pdf";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
